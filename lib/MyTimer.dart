@@ -37,6 +37,10 @@ class _MyTimerState extends State<MyTimer> {
       stopped = false;
     });
     timeForTimer = ((hour * 60 * 60) + (min * 60) + sec);
+    print(' --- timeForTimer : $timeForTimer');
+    print(' --- hour : $hour');
+    print(' --- min : $min');
+    print(' --- sec : $sec');
     Timer.periodic(Duration(
       seconds: 1,
     ), (Timer t){
@@ -62,8 +66,13 @@ class _MyTimerState extends State<MyTimer> {
         int t = timeForTimer - (3600 * h);
         int m = t~/60;
         int s = t - (60*m);
+        print(' --- h : $h');
+        print(' --- t : $t');
+        print(' --- m : $m');
+        print(' --- s : $s');
         timetodisplay =
             h.toString() + ":" + m.toString() + ":" + s.toString();
+            print(' --- timetodisplay : $timetodisplay');
         timeForTimer = timeForTimer -1;
       }
     });
@@ -164,7 +173,7 @@ class _MyTimerState extends State<MyTimer> {
                     value: hour,
                     minValue:0, 
                     maxValue:60,
-                    
+                    itemWidth: 60,
                     onChanged: (val){
                     setState(() {
                       sec = val;
