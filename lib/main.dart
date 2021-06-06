@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+// import 'package:flutter_application_1/MyAlarm.dart';
+// import 'package:flutter_application_1/MyTime.dart';
+
+import 'MyTimer.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,7 +26,9 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyTimer(),
     );
   }
 }
