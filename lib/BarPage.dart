@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
-class BottomBar extends StatefulWidget {
-  const BottomBar({ Key? key }) : super(key: key);
+class BarPage extends StatefulWidget {
+
+  const BarPage({ 
+    Key? key 
+  }) : super(key: key);
 
   @override
-  _BottomBarState createState() => _BottomBarState();
+  _BarPageState createState() => _BarPageState();
 }
 
-class _BottomBarState extends State<BottomBar> {
-
-  // var imageUrl = "https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
+class _BarPageState extends State<BarPage> {
 
   int _selectedIndex = 0;
   List _widgetOptions = [
     Text(
-      'Menu',
+      'Mail',
       style: TextStyle(fontSize: 30, fontFamily: 'DoHyeonRegular'),
     ),
     Text(
@@ -31,13 +33,30 @@ class _BottomBarState extends State<BottomBar> {
     ),
   ];
 
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(  // 구글 기본 디자인인 Material Design을 써서 앱을 만든다. 
-      title: '플러터 앱', 
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Bottom Bar'),
+          title: Text('BarPage'),
+          centerTitle: true,  //제목 text 가운데정렬 여부 
+          backgroundColor: Colors.pinkAccent,
+          leading: IconButton(
+            icon: Icon(Icons.menu), 
+            onPressed: () => showToast('leading버튼'),
+          ),
+          actions: [
+              IconButton(
+                icon: Icon(Icons.search), 
+                onPressed: () => showToast('action버튼1'),
+              ),
+              IconButton(
+                icon: Icon(Icons.navigate_next), 
+                onPressed: () => showToast('action버튼2'),
+              ),
+          ],
+          elevation: 100,  //appBar 그림자 (0일 경우 그림자 x)
         ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
@@ -54,8 +73,8 @@ class _BottomBarState extends State<BottomBar> {
           },
           items: [
             BottomNavigationBarItem(
-              title: Text('Menu'),
-              icon: Icon(Icons.menu),
+              title: Text('Mail'),
+              icon: Icon(Icons.mail),
             ),
             BottomNavigationBarItem(
               title: Text('Home'),
@@ -71,11 +90,25 @@ class _BottomBarState extends State<BottomBar> {
             ),
           ],
         ),
-        body: Center(
-          child: _widgetOptions.elementAt(_selectedIndex),
+        body: Container(
+          child: Center(
+            child: _widgetOptions.elementAt(_selectedIndex),
+          ),
         ),
         
       ),
-  );
+    );
   }
+
+
+  /* Toast 띄우기 */
+  void showToast(String msg) {
+    print(' == msg : $msg');
+    Fluttertoast.showToast(
+      msg: msg,
+      toastLength: Toast.LENGTH_LONG, 
+      // gravity: ToastGravity.CENTER,  //위치(default 는 아래)
+    );
+  }
+
 }

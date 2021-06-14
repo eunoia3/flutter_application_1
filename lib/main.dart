@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/bottomBar.dart';
+import 'package:flutter_application_1/BarPage.dart';
 import 'package:flutter_application_1/textfield.dart';
 // import 'package:flutter_application_1/MyAlarm.dart';
 // import 'package:flutter_application_1/MyTime.dart';
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
       // home: MyTimer(),
       // home: ListViewPage(title: 'Flutter Demo Home Page',),
-      home: BottomBar(),
+      home: BarPage(),
       // home: TextFieldPage(),
       // home: MyStopPage(),
     );
