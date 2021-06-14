@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/bottomBar.dart';
+import 'package:flutter_application_1/textfield.dart';
 // import 'package:flutter_application_1/MyAlarm.dart';
 // import 'package:flutter_application_1/MyTime.dart';
 
+import 'MyStop.dart';
 import 'MyTimer.dart';
+import 'listview.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,7 +32,11 @@ class MyApp extends StatelessWidget {
       ),
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
-      home: MyTimer(),
+      // home: MyTimer(),
+      // home: ListViewPage(title: 'Flutter Demo Home Page',),
+      home: BottomBar(),
+      // home: TextFieldPage(),
+      // home: MyStopPage(),
     );
   }
 }
