@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/BarPage.dart';
-import 'package:flutter_application_1/ListviewPage1.dart';
+import 'package:flutter_application_1/ListviewBasicPage.dart';
 import 'package:flutter_application_1/textfield.dart';
 // import 'package:flutter_application_1/MyAlarm.dart';
 // import 'package:flutter_application_1/MyTime.dart';
 
-import 'MyStop.dart';
+import 'GridviewPage.dart';
+import 'MainPage.dart';
+import 'MyAlarm.dart';
+import 'MyStopPage.dart';
+import 'MyTime.dart';
 import 'MyTimer.dart';
 import 'ListviewPage.dart';
+import 'PageviewPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,10 +39,25 @@ class MyApp extends StatelessWidget {
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
       // home: MyTimer(),
-      home: ListviewPage1(),
+      // home: ListviewPage(),
+      // home: GridviewPage(),
       // home: BarPage(),
       // home: TextFieldPage(),
       // home: MyStopPage(),
+      initialRoute: '/MainPage',
+      routes: {
+        '/MainPage': (context) => MainPage(),
+        '/BarPage': (context) => BarPage(),
+        '/ListviewBasicPage': (context) => ListviewBasicPage(),
+        '/ListviewPage': (context) => ListviewPage(),
+        '/GridviewPage': (context) => GridviewPage(),
+        '/PageviewPage': (context) => PageviewPage(),
+        '/TextFieldPage': (context) => TextFieldPage(),
+        '/MyAlarm': (context) => MyAlarm(),
+        '/MyStopPage': (context) => MyStopPage(),
+        '/MyTime': (context) => MyTime(),
+        // '/MyTimer': (context) => MyTimer(),  --안씀
+      },
     );
   }
 }

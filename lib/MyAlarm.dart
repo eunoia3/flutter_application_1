@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-
 class MyAlarm extends StatefulWidget {
   @override
   _MyAlarmState createState() => _MyAlarmState();
@@ -14,7 +13,7 @@ class _MyAlarmState extends State<MyAlarm> {
   String _buttonText = 'Start';
   @override
   void dispose() {
-    _timer?.cancel();
+    _timer.cancel();
     super.dispose();
   }
 
@@ -44,7 +43,7 @@ class _MyAlarmState extends State<MyAlarm> {
                     });
                   });
                 } else {
-                  _timer?.cancel();
+                  _timer.cancel();
                   setState(() {
                     _buttonText = 'Start';
                   });
