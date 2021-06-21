@@ -142,6 +142,11 @@ class MainPage extends StatelessWidget {
           ],
         ),
       ),
+      body: Container(
+        // child: Image.asset('assets/images/img_blue.png'),
+        child: Image.network(
+            'https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'),
+      ),
     );
   }
 }
