@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class TextFieldPage extends StatefulWidget {
   @override
   _TextFieldPageState createState() => _TextFieldPageState();
@@ -58,8 +57,8 @@ class _TextFieldPageState extends State<TextFieldPage> {
 
   Widget _buildTextComposer() {
     return Container(
-      height: 36,
-      color: Colors.grey,
+        height: 36,
+        // color: Colors.grey,
         margin: const EdgeInsets.symmetric(
           horizontal: 8.0,
         ),
@@ -70,7 +69,12 @@ class _TextFieldPageState extends State<TextFieldPage> {
                 controller: _textController,
                 onSubmitted: _handleSubmitted,
                 decoration:
-                    InputDecoration.collapsed(hintText: '검색어를 입력해주세요'),
+                    // InputDecoration.collapsed(hintText: '검색어를 입력해주세요'),
+                    InputDecoration(
+                  labelText: '검색어 입력',
+                  // hintText: '검색어를 입력해주세요',
+                  border: OutlineInputBorder(), //외곽선
+                ),
               ),
             ),
             GestureDetector(
@@ -82,21 +86,18 @@ class _TextFieldPageState extends State<TextFieldPage> {
                 //     ),
                 //   context,
                 // );
-              }, 
+              },
               child: Container(
                 color: Colors.yellow,
                 margin: const EdgeInsets.symmetric(
                   horizontal: 4.0,
                 ),
-                child: Text(
-                    '취소'
-                ),
+                child: Text('취소'),
               ),
             ),
           ],
         ));
   }
-
 
   void _handleSubmitted(String text) {
     _textController.clear();

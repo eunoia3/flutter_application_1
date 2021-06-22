@@ -45,43 +45,44 @@ class _ListviewPageState extends State<ListviewPage> {
           itemBuilder: (BuildContext context, int index) {
             //리스트의 반목문 항목 형성
             return Container(
-                height: 80,
-                color: Colors.pink[index * 100],
-                child: Row(
-                  children: [
-                    Container(
-                      width: 50,
+              height: 80,
+              color: Colors.pink[index * 100],
+              child: Row(
+                children: [
+                  Container(
+                    width: 50,
+                    alignment: Alignment.center,
+                    // color: Colors.yellow,
+                    child: Text(
+                      '$index',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  Image.asset(
+                    bearList!.list!.elementAt(index).image!,
+                  ),
+                  // Image.network(
+                  //   'http://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                  //   height: 80,
+                  //   width: 50,
+                  //   fit: BoxFit.fill,
+                  // ),
+                  Expanded(
+                    child: Container(
                       alignment: Alignment.center,
-                      // color: Colors.yellow,
                       child: Text(
-                        '$index',
+                        bearList!.list!.elementAt(index).name!,
                         style: TextStyle(
                           fontSize: 20,
                         ),
                       ),
                     ),
-                    Image.asset(
-                      bearList!.list!.elementAt(index).image!,
-                    ),
-                    // Image.network(
-                    //   'http://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                    //   height: 80,
-                    //   width: 50,
-                    //   fit: BoxFit.fill,
-                    // ),
-                    Expanded(
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Text(
-                          bearList!.list!.elementAt(index).name!,
-                          style: TextStyle(
-                            fontSize: 20,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ));
+                  ),
+                ],
+              ),
+            );
           },
         ),
       ),

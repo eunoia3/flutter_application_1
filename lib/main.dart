@@ -5,6 +5,11 @@ import 'package:flutter_application_1/textfield.dart';
 // import 'package:flutter_application_1/MyAlarm.dart';
 // import 'package:flutter_application_1/MyTime.dart';
 
+import 'AnimatedContainerPage.dart';
+import 'AnimatedOpacityPage.dart';
+import 'CardPage.dart';
+import 'CarouselSliderPage.dart';
+import 'DismissiblePage.dart';
 import 'GridviewPage.dart';
 import 'MainPage.dart';
 import 'MyAlarm.dart';
@@ -12,7 +17,9 @@ import 'MyStopPage.dart';
 import 'MyTime.dart';
 import 'MyTimer.dart';
 import 'ListviewPage.dart';
+import 'OrientationPage.dart';
 import 'PageviewPage.dart';
+import 'ShowDialogPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -56,6 +63,13 @@ class MyApp extends StatelessWidget {
         '/MyAlarm': (context) => MyAlarm(),
         '/MyStopPage': (context) => MyStopPage(),
         '/MyTime': (context) => MyTime(),
+        '/ShowDialogPage': (context) => ShowDialogPage(),
+        '/CarouselSliderPage': (context) => CarouselSliderPage(),
+        '/CardPage': (context) => CardPage(),
+        '/AnimatedContainerPage': (context) => AnimatedContainerPage(),
+        '/AnimatedOpacityPage': (context) => AnimatedOpacityPage(),
+        '/OrientationPage': (context) => OrientationPage(),
+        '/DismissiblePage': (context) => DismissiblePage(),
         // '/MyTimer': (context) => MyTimer(),  --안씀
       },
     );
