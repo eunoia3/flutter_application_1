@@ -63,12 +63,6 @@ class _ListviewPageState extends State<ListviewPage> {
                   Image.asset(
                     bearList!.list!.elementAt(index).image!,
                   ),
-                  // Image.network(
-                  //   'http://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                  //   height: 80,
-                  //   width: 50,
-                  //   fit: BoxFit.fill,
-                  // ),
                   Expanded(
                     child: Container(
                       alignment: Alignment.center,
