@@ -19,6 +19,7 @@ import 'MyTimer.dart';
 import 'ListviewPage.dart';
 import 'OrientationPage.dart';
 import 'PageviewPage.dart';
+import 'PlatformPage.dart';
 import 'ShowDialogPage.dart';
 
 void main() {
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
       // home: MyStopPage(),
       initialRoute: '/MainPage',
       routes: {
-        '/MainPage': (context) => MainPage(),
+        '/MainPage': (context) => PlatformPage(),
         '/BarPage': (context) => BarPage(),
         '/ListviewBasicPage': (context) => ListviewBasicPage(),
         '/ListviewPage': (context) => ListviewPage(),

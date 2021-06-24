@@ -240,9 +240,9 @@ class MainPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Image.asset(
-              bearList!.list!.elementAt(0).image!), //bearList 의 0번째 요소의 image
-          Text(bearList!.list!.elementAt(0).name!), //bearList 의 0번째 요소의 name
+          // Image.asset(
+          //     bearList!.list!.elementAt(0).image!), //bearList 의 0번째 요소의 image
+          // Text(bearList!.list!.elementAt(0).name!), //bearList 의 0번째 요소의 name
         ],
       ),
       // body: Image.asset(bearList!.list!.elementAt(0).image!),
