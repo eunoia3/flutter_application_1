@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/BarPage.dart';
 import 'package:flutter_application_1/ListviewBasicPage.dart';
+import 'package:flutter_application_1/ProviderPage.dart';
 import 'package:flutter_application_1/textfield.dart';
 // import 'package:flutter_application_1/MyAlarm.dart';
 // import 'package:flutter_application_1/MyTime.dart';
@@ -20,6 +21,7 @@ import 'ListviewPage.dart';
 import 'OrientationPage.dart';
 import 'PageviewPage.dart';
 import 'PlatformPage.dart';
+import 'SamplePage.dart';
 import 'ShowDialogPage.dart';
 
 void main() {
@@ -54,7 +56,9 @@ class MyApp extends StatelessWidget {
       // home: MyStopPage(),
       initialRoute: '/MainPage',
       routes: {
-        '/MainPage': (context) => PlatformPage(),
+        // '/MainPage': (context) => PlatformPage(),
+        // '/MainPage': (context) => ProviderPage(),
+        '/MainPage': (context) => SamplePage(),
         '/BarPage': (context) => BarPage(),
         '/ListviewBasicPage': (context) => ListviewBasicPage(),
         '/ListviewPage': (context) => ListviewPage(),
