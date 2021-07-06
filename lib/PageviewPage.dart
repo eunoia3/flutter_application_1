@@ -33,17 +33,19 @@ class _PageviewPageState extends State<PageviewPage> {
           title: Text('PageviewPage'),
         ),
         body: PageView.builder(
-            controller: PageController(
-              initialPage: bearList!.list!.length,
-            ),
-            itemCount: bearList!.list!.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Container(
-                child: Image.asset(
-                  bearList!.list!.elementAt(index).image!,
-                ),
-              );
-            }),
+          controller: PageController(
+            initialPage: 0, //시작 페이지
+          ),
+          itemCount: bearList!.list!.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Container(
+              color: Colors.blue[200],
+              child: Image.asset(
+                bearList!.list!.elementAt(index).image!,
+              ),
+            );
+          },
+        ),
       ),
     );
   }

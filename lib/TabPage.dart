@@ -14,7 +14,7 @@ class _TabPageState extends State<TabPage> with TickerProviderStateMixin {
   void initState() {
     _tabController = TabController(
       length: 2,
-      vsync: this,
+      vsync: this, //vsync에 this 형태로 전달해야 애니메이션이 정상 처리됨
     );
     super.initState();
   }
@@ -23,21 +23,34 @@ class _TabPageState extends State<TabPage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'TabPage',
+        title: Container(
+          child: Text(
+            'TabPage',
+          ),
         ),
       ),
       body: Column(
         children: [
           Container(
-            height: 50,
+            decoration: BoxDecoration(
+              border: Border.all(),
+            ),
             child: TabBar(
+              controller: _tabController,
               tabs: [
-                Text(
-                  'Tab1',
+                Container(
+                  height: 80,
+                  alignment: Alignment.center,
+                  child: Text(
+                    'Tab1',
+                  ),
                 ),
-                Text(
-                  'Tab2',
+                Container(
+                  height: 80,
+                  alignment: Alignment.center,
+                  child: Text(
+                    'Tab2',
+                  ),
                 ),
               ],
               indicator: BoxDecoration(
@@ -45,28 +58,38 @@ class _TabPageState extends State<TabPage> with TickerProviderStateMixin {
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                   colors: [
-                    Color(0xFFef763d),
-                    Color(0xFFe3317d),
+                    Colors.blueAccent,
+                    Colors.pinkAccent,
                   ],
-                ),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(8),
                 ),
               ),
               labelColor: Colors.white,
               unselectedLabelColor: Colors.black,
-              controller: _tabController,
             ),
           ),
           Expanded(
             child: TabBarView(
               controller: _tabController,
               children: [
-                Text(
-                  'Tab1 View',
+                Container(
+                  color: Colors.yellow[200],
+                  alignment: Alignment.center,
+                  child: Text(
+                    'Tab1 View',
+                    style: TextStyle(
+                      fontSize: 30,
+                    ),
+                  ),
                 ),
-                Text(
-                  'Tab2 View',
+                Container(
+                  color: Colors.green[200],
+                  alignment: Alignment.center,
+                  child: Text(
+                    'Tab2 View',
+                    style: TextStyle(
+                      fontSize: 30,
+                    ),
+                  ),
                 ),
               ],
             ),

@@ -24,9 +24,17 @@ class _CardPageState extends State<CardPage> {
           child: Container(
             height: 200,
             width: 200,
+            // child: ClipRRect(
+            // borderRadius: BorderRadius.circular(16.0),
+            // child: Image.asset(
+            //   'assets/images/img_yellow.png',
+            //   fit: BoxFit.fill,
+            // ),
+            // ),
             child: Icon(
-              Icons.image,
+              Icons.face,
               color: Colors.grey,
+              size: 200,
             ),
           ),
         ),

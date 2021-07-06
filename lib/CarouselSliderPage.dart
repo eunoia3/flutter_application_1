@@ -35,28 +35,24 @@ class _CarouselSliderPageState extends State<CarouselSliderPage> {
           'CarouselSliderPage',
         ),
       ),
-      body: Container(
-        margin: const EdgeInsets.only(
-          top: 50,
-          bottom: 50,
-        ),
-        padding: const EdgeInsets.only(
-          top: 50,
-          bottom: 50,
-        ),
-        color: Colors.greenAccent,
+      body: Center(
         child: CarouselSlider(
           options: CarouselOptions(
-            height: 300.0,
-            autoPlay: true,
+            autoPlay: true, //자동재생 여부
           ),
           items: bearList!.list!.map((item) {
             return Builder(builder: (BuildContext context) {
               return Container(
-                width: MediaQuery.of(context).size.width,
-                margin: EdgeInsets.all(5.0),
+                decoration: BoxDecoration(
+                  //border 를 주기 위해 decoration 사용
+                  border: Border.all(
+                    width: 3,
+                    color: Colors.grey,
+                  ),
+                  borderRadius: BorderRadius.circular(16.0),
+                ),
                 child: ClipRRect(
-                  //ClipRRect : 위젯 모서리 둥글게 하는 위젯
+                  //ClipRRect : 위젯 모서리 둥글게 하기위해 사용하는 위젯
                   borderRadius: BorderRadius.circular(16.0),
                   child: Image.asset(
                     item.image!,
