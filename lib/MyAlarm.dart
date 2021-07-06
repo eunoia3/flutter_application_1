@@ -27,28 +27,38 @@ class _MyAlarmState extends State<MyAlarm> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            RaisedButton(
-              child: Text("$_buttonText"),
+            Container(
               color: Colors.orange,
-              onPressed: () {
-                _isRunning = !_isRunning;
-                if (_isRunning) {
-                  setState(() {
-                    _timerCount = 0;
-                    _buttonText = 'Stop';
-                  });
-                  _timer = Timer.periodic(Duration(milliseconds: 100), (timer) {
+              child: TextButton(
+                child: Container(
+                  child: Text(
+                    '$_buttonText',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                onPressed: () {
+                  _isRunning = !_isRunning;
+                  if (_isRunning) {
                     setState(() {
-                      _timerCount++;
+                      _timerCount = 0;
+                      _buttonText = 'Stop';
                     });
-                  });
-                } else {
-                  _timer.cancel();
-                  setState(() {
-                    _buttonText = 'Start';
-                  });
-                }
-              },
+                    _timer =
+                        Timer.periodic(Duration(milliseconds: 100), (timer) {
+                      setState(() {
+                        _timerCount++;
+                      });
+                    });
+                  } else {
+                    _timer.cancel();
+                    setState(() {
+                      _buttonText = 'Start';
+                    });
+                  }
+                },
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 10.0),

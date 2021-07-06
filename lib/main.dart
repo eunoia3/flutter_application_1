@@ -22,7 +22,9 @@ import 'OrientationPage.dart';
 import 'PageviewPage.dart';
 import 'PlatformPage.dart';
 import 'SamplePage.dart';
+import 'ScrollPage.dart';
 import 'ShowDialogPage.dart';
+import 'TabPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -56,14 +58,17 @@ class MyApp extends StatelessWidget {
       // home: MyStopPage(),
       initialRoute: '/MainPage',
       routes: {
+        // '/MainPage': (context) => MainPage(),
         // '/MainPage': (context) => PlatformPage(),
         // '/MainPage': (context) => ProviderPage(),
-        '/MainPage': (context) => SamplePage(),
+        // '/MainPage': (context) => SamplePage(),
+        '/MainPage': (context) => ScrollPage(),
         '/BarPage': (context) => BarPage(),
         '/ListviewBasicPage': (context) => ListviewBasicPage(),
         '/ListviewPage': (context) => ListviewPage(),
         '/GridviewPage': (context) => GridviewPage(),
         '/PageviewPage': (context) => PageviewPage(),
+        '/TabPage': (context) => TabPage(),
         '/TextFieldPage': (context) => TextFieldPage(),
         '/MyAlarm': (context) => MyAlarm(),
         '/MyStopPage': (context) => MyStopPage(),

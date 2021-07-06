@@ -104,6 +104,17 @@ class MainPage extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(
+                Icons.pages,
+                color: Colors.grey,
+              ),
+              title: Text('TabPage'),
+              onTap: () {
+                Navigator.pushNamed(context, '/TabPage');
+              },
+              trailing: Icon(Icons.arrow_forward),
+            ),
+            ListTile(
+              leading: Icon(
                 Icons.home,
                 color: Colors.grey,
               ),
