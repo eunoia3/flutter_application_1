@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/BarPage.dart';
 import 'package:flutter_application_1/ListviewBasicPage.dart';
 import 'package:flutter_application_1/ProviderPage.dart';
-import 'package:flutter_application_1/textfield.dart';
 // import 'package:flutter_application_1/MyAlarm.dart';
 // import 'package:flutter_application_1/MyTime.dart';
 
@@ -25,6 +24,7 @@ import 'SamplePage.dart';
 import 'ScrollPage.dart';
 import 'ShowDialogPage.dart';
 import 'TabPage.dart';
+import 'TextFieldPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -58,11 +58,11 @@ class MyApp extends StatelessWidget {
       // home: MyStopPage(),
       initialRoute: '/MainPage',
       routes: {
-        // '/MainPage': (context) => MainPage(),
+        '/MainPage': (context) => MainPage(),
         // '/MainPage': (context) => PlatformPage(),
         // '/MainPage': (context) => ProviderPage(),
         // '/MainPage': (context) => SamplePage(),
-        '/MainPage': (context) => ScrollPage(),
+        // '/MainPage': (context) => ScrollPage(),
         '/BarPage': (context) => BarPage(),
         '/ListviewBasicPage': (context) => ListviewBasicPage(),
         '/ListviewPage': (context) => ListviewPage(),
@@ -73,7 +73,7 @@ class MyApp extends StatelessWidget {
         '/MyAlarm': (context) => MyAlarm(),
         '/MyStopPage': (context) => MyStopPage(),
         '/MyTime': (context) => MyTime(),
-        '/ShowDialogPage': (context) => ShowDialogPage(),
+        '/ShowPopPage': (context) => ShowPopPage(),
         '/CarouselSliderPage': (context) => CarouselSliderPage(),
         '/CardPage': (context) => CardPage(),
         '/AnimatedContainerPage': (context) => AnimatedContainerPage(),

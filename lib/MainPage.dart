@@ -162,9 +162,9 @@ class MainPage extends StatelessWidget {
                 Icons.home,
                 color: Colors.grey,
               ),
-              title: Text('ShowDialogPage'),
+              title: Text('ShowPopPage'),
               onTap: () {
-                Navigator.pushNamed(context, '/ShowDialogPage');
+                Navigator.pushNamed(context, '/ShowPopPage');
               },
               trailing: Icon(Icons.arrow_forward),
             ),

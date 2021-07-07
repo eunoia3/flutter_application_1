@@ -2,25 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/MainPage.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-class ShowDialogPage extends StatefulWidget {
-  const ShowDialogPage({Key? key}) : super(key: key);
+class ShowPopPage extends StatefulWidget {
+  const ShowPopPage({Key? key}) : super(key: key);
 
   @override
-  _ShowDialogPageState createState() => _ShowDialogPageState();
+  _ShowPopPageState createState() => _ShowPopPageState();
 }
 
-class _ShowDialogPageState extends State<ShowDialogPage> {
+class _ShowPopPageState extends State<ShowPopPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ShowDialogPage'),
+        title: Text('ShowPopPage'),
       ),
       body: Column(
         children: [
           TextButton(
             onPressed: () {
-              showPop();
+              showDialogPop();
             },
             child: Container(
               height: 50,
@@ -30,7 +30,7 @@ class _ShowDialogPageState extends State<ShowDialogPage> {
               ),
               decoration: BoxDecoration(
                   border: Border.all(
-                width: 1,
+                width: 3,
                 color: Colors.amberAccent,
               )),
               alignment: Alignment.centerLeft,
@@ -41,7 +41,7 @@ class _ShowDialogPageState extends State<ShowDialogPage> {
           ),
           TextButton(
             onPressed: () {
-              showDate();
+              showDatePickerPop();
             },
             child: Container(
               height: 50,
@@ -51,7 +51,7 @@ class _ShowDialogPageState extends State<ShowDialogPage> {
               ),
               decoration: BoxDecoration(
                   border: Border.all(
-                width: 1,
+                width: 3,
                 color: Colors.amberAccent,
               )),
               alignment: Alignment.centerLeft,
@@ -62,7 +62,7 @@ class _ShowDialogPageState extends State<ShowDialogPage> {
           ),
           TextButton(
             onPressed: () {
-              showTime();
+              showTimePickerPop();
             },
             child: Container(
               height: 50,
@@ -72,13 +72,58 @@ class _ShowDialogPageState extends State<ShowDialogPage> {
               ),
               decoration: BoxDecoration(
                   border: Border.all(
-                width: 1,
+                width: 3,
                 color: Colors.amberAccent,
               )),
               alignment: Alignment.centerLeft,
               child: Text(
                 'TimePicker 띄우기',
               ),
+            ),
+          ),
+          Container(
+            height: 50,
+            margin: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.only(
+              left: 15,
+            ),
+            decoration: BoxDecoration(
+                border: Border.all(
+              width: 3,
+              color: Colors.amberAccent,
+            )),
+            alignment: Alignment.centerLeft,
+            child: Builder(
+              builder: (context) => TextButton(
+                onPressed: () {
+                  final snackBar = SnackBar(
+                    content: Text('나는 스낵바'),
+                    action: SnackBarAction(
+                      onPressed: () {},
+                      label: '취소',
+                    ),
+                  );
+                  Scaffold.of(context).showSnackBar(snackBar);
+                },
+                child: Text('Show SnackBar'),
+              ),
+
+//                builder: (context) {
+//                   return TextButton(
+//                     onPressed: () {
+//                       final snackBar = SnackBar(
+//                         content: Text('나는 스낵바'),
+//                         action: SnackBarAction(
+//                           onPressed: () {},
+//                           label: '취소',
+//                         ),
+//                       );
+//                       Scaffold.of(context).showSnackBar(snackBar);
+//                     },
+//                     child: Text('Show SnackBar'),
+//                   );
+//                 },
+              // ),
             ),
           ),
           GestureDetector(
@@ -92,7 +137,7 @@ class _ShowDialogPageState extends State<ShowDialogPage> {
               ),
               decoration: BoxDecoration(
                   border: Border.all(
-                width: 1,
+                width: 3,
                 color: Colors.amberAccent,
               )),
               alignment: Alignment.centerLeft,
@@ -112,7 +157,7 @@ class _ShowDialogPageState extends State<ShowDialogPage> {
               ),
               decoration: BoxDecoration(
                   border: Border.all(
-                width: 1,
+                width: 3,
                 color: Colors.amberAccent,
               )),
               alignment: Alignment.centerLeft,
@@ -121,33 +166,13 @@ class _ShowDialogPageState extends State<ShowDialogPage> {
               ),
             ),
           ),
-          InkWell(
-            //클릭 시 물결 효과
-            onTap: () {},
-            child: Builder(
-              builder: (context) => Center(
-                child: TextButton(
-                  onPressed: () {
-                    final snackBar = SnackBar(
-                      content: Text('나는 스낵바'),
-                      action: SnackBarAction(
-                        onPressed: () {},
-                        label: '취소',
-                      ),
-                    );
-                    Scaffold.of(context).showSnackBar(snackBar);
-                  },
-                  child: Text('Show SnackBar'),
-                ),
-              ),
-            ),
-          ),
         ],
       ),
     );
   }
 
-  void showPop() {
+  /* Dialog 띄우기 */
+  void showDialogPop() {
     showDialog(
       context: context,
       barrierDismissible:
@@ -199,7 +224,8 @@ class _ShowDialogPageState extends State<ShowDialogPage> {
     );
   }
 
-  void showDate() {
+  /* DatePicker 띄우기 */
+  void showDatePickerPop() {
     Future<DateTime?> selectedDate = showDatePicker(
       context: context,
       initialDate: DateTime.now(), //초기값
@@ -217,22 +243,22 @@ class _ShowDialogPageState extends State<ShowDialogPage> {
       Fluttertoast.showToast(
         msg: dateTime.toString(),
         toastLength: Toast.LENGTH_LONG,
-        // gravity: ToastGravity.CENTER,  //위치(default 는 아래)
+        //gravity: ToastGravity.CENTER,  //위치(default 는 아래)
       );
     });
   }
 
-  void showTime() {
+  /* TimePicker 띄우기 */
+  void showTimePickerPop() {
     Future<TimeOfDay?> selectedTime = showTimePicker(
       context: context,
       initialTime: TimeOfDay.now(),
     );
-
     selectedTime.then((timeOfDay) {
       Fluttertoast.showToast(
         msg: timeOfDay.toString(),
         toastLength: Toast.LENGTH_LONG,
-        // gravity: ToastGravity.CENTER,  //위치(default 는 아래)
+        //gravity: ToastGravity.CENTER,  //위치(default 는 아래)
       );
     });
   }

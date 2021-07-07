@@ -42,8 +42,14 @@ class _TextFieldPageState extends State<TextFieldPage> {
               Flexible(
                 child: TextField(
                   controller: _textController,
-                  onSubmitted: sendMsg,
-                  onChanged: checkText,
+                  // onSubmitted: sendMsg,
+                  // onChanged: checkText,
+                  onSubmitted: (text) {
+                    sendMsg(text);
+                  },
+                  onChanged: (text) {
+                    checkText(text);
+                  },
                   decoration: InputDecoration(
                     labelText: '텍스트 입력',
                     // hintText: '텍스트를 입력해주세요',
