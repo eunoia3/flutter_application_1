@@ -18,10 +18,12 @@ class BearList {
 
 @JsonSerializable()
 class BearItem {
+  int? index;
   String? image;
   String? name;
 
   BearItem({
+    required this.index,
     required this.image,
     required this.name,
   });

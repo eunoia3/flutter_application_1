@@ -22,7 +22,7 @@ import 'PageviewPage.dart';
 import 'PlatformPage.dart';
 import 'SamplePage.dart';
 import 'ScrollPage.dart';
-import 'ShowDialogPage.dart';
+import 'ShowPopPage.dart';
 import 'TabPage.dart';
 import 'TextFieldPage.dart';
 
@@ -58,12 +58,12 @@ class MyApp extends StatelessWidget {
       // home: MyStopPage(),
       initialRoute: '/MainPage',
       routes: {
-        '/MainPage': (context) => MainPage(),
+        // '/MainPage': (context) => MainPage(),
         // '/MainPage': (context) => PlatformPage(),
         // '/MainPage': (context) => ProviderPage(),
         // '/MainPage': (context) => SamplePage(),
-        // '/MainPage': (context) => ScrollPage(),
-        '/BarPage': (context) => BarPage(),
+        '/MainPage': (context) => ScrollPage(),
+        // '/BarPage': (context) => BarPage(),
         '/ListviewBasicPage': (context) => ListviewBasicPage(),
         '/ListviewPage': (context) => ListviewPage(),
         '/GridviewPage': (context) => GridviewPage(),

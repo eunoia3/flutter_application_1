@@ -107,23 +107,6 @@ class _ShowPopPageState extends State<ShowPopPage> {
                 },
                 child: Text('Show SnackBar'),
               ),
-
-//                builder: (context) {
-//                   return TextButton(
-//                     onPressed: () {
-//                       final snackBar = SnackBar(
-//                         content: Text('나는 스낵바'),
-//                         action: SnackBarAction(
-//                           onPressed: () {},
-//                           label: '취소',
-//                         ),
-//                       );
-//                       Scaffold.of(context).showSnackBar(snackBar);
-//                     },
-//                     child: Text('Show SnackBar'),
-//                   );
-//                 },
-              // ),
             ),
           ),
           GestureDetector(

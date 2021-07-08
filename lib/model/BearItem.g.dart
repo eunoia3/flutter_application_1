@@ -20,12 +20,14 @@ Map<String, dynamic> _$BearListToJson(BearList instance) => <String, dynamic>{
 
 BearItem _$BearItemFromJson(Map<String, dynamic> json) {
   return BearItem(
+    index: json['index'] as int?,
     image: json['image'] as String?,
     name: json['name'] as String?,
   );
 }
 
 Map<String, dynamic> _$BearItemToJson(BearItem instance) => <String, dynamic>{
+      'index': instance.index,
       'image': instance.image,
       'name': instance.name,
     };
