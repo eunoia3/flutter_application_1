@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 
 class ScrollWidgetPage extends StatefulWidget {
   final int index;
+  final String imgUrl;
+  final String imgNm;
   final GlobalKey itemKey;
 
   const ScrollWidgetPage({
     Key? key,
     required this.index,
+    required this.imgUrl,
+    required this.imgNm,
     required this.itemKey,
   }) : super(key: key);
 
@@ -24,7 +28,10 @@ class _ScrollWidgetPageState extends State<ScrollWidgetPage> {
       child: Container(
         key: widget.itemKey,
         height: 80,
-        color: Colors.pink[widget.index * 100],
+        decoration: BoxDecoration(
+          color: Colors.pink[widget.index * 100],
+          border: Border.all(color: Colors.grey),
+        ),
         child: Row(
           children: [
             Container(
@@ -37,14 +44,14 @@ class _ScrollWidgetPageState extends State<ScrollWidgetPage> {
                 ),
               ),
             ),
-            // Image.asset(
-            //   bearList!.list!.elementAt(index).image!,
-            // ),
+            Image.asset(
+              widget.imgUrl,
+            ),
             Expanded(
               child: Container(
                 alignment: Alignment.center,
                 child: Text(
-                  'item : ${widget.index}',
+                  widget.imgNm,
                   style: TextStyle(
                     fontSize: 20,
                   ),

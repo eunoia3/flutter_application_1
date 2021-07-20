@@ -54,6 +54,20 @@ class _TextFieldPageState extends State<TextFieldPage> {
                     labelText: '텍스트 입력',
                     // hintText: '텍스트를 입력해주세요',
                     border: OutlineInputBorder(), //외곽선
+                    suffixIcon: _textController.text.isNotEmpty
+                        ? Container(
+                            child: IconButton(
+                              alignment: Alignment.centerRight,
+                              icon: Icon(
+                                Icons.cancel,
+                              ),
+                              onPressed: () {
+                                _textController.clear();
+                                setState(() {});
+                              },
+                            ),
+                          )
+                        : null,
                   ),
                 ),
               ),
