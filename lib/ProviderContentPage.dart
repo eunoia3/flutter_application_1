@@ -28,10 +28,10 @@ class ProviderContentPage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             Text(
               '${counter.getCounter()}',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.headline4,
             ),
             RaisedButton(
               onPressed: () {
