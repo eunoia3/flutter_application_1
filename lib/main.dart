@@ -3,6 +3,7 @@ import 'package:flutter_application_1/BarPage.dart';
 import 'package:flutter_application_1/ListviewBasicPage.dart';
 import 'package:flutter_application_1/ProviderPage.dart';
 import 'package:flutter_application_1/TooltipPage.dart';
+import 'package:flutter_application_1/VideoPlayerPage.dart';
 // import 'package:flutter_application_1/MyAlarm.dart';
 // import 'package:flutter_application_1/MyTime.dart';
 
@@ -68,7 +69,8 @@ class MyApp extends StatelessWidget {
         // '/MainPage': (context) => SamplePage(),
         // '/MainPage': (context) => ScrollPage(),
         // '/MainPage': (context) => FutureScrollPage(),
-        '/MainPage': (context) => OverlayPage(),
+        // '/MainPage': (context) => OverlayPage(),
+        '/MainPage': (context) => VideoPlayerPage(),
         // '/MainPage': (context) => TooltipPage(),
         // '/MainPage': (context) => KeyboardPage(),
         // '/BarPage': (context) => BarPage(),
